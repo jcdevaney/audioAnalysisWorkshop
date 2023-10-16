@@ -1,0 +1,30 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix vamp:     <http://purl.org/ontology/vamp/> .
+@prefix :         <#> .
+
+:transform a vamp:Transform ;
+    vamp:plugin <http://vamp-plugins.org/rdf/plugins/bbc-vamp-plugins#bbc-energy> ;
+    vamp:step_size "1024"^^xsd:int ; 
+    vamp:block_size "1024"^^xsd:int ; 
+    vamp:plugin_version """3""" ; 
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "avgpercentile" ] ;
+        vamp:value "3"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "avgwindow" ] ;
+        vamp:value "1"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "dipthresh" ] ;
+        vamp:value "3"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "root" ] ;
+        vamp:value "1"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "threshold" ] ;
+        vamp:value "1"^^xsd:float ;
+    ] ;
+    vamp:output <http://vamp-plugins.org/rdf/plugins/bbc-vamp-plugins#bbc-energy_output_rmsenergy> .
